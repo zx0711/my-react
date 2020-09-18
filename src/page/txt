@@ -1,0 +1,33 @@
+componentDidMount
+1.ui渲染完成后调用
+2。只执行一次
+3，出发ajax请求放在这个周期里
+
+componentWillUnmount
+1,组建移除时被调用
+2,适用于 资源释放
+
+getSnapshotBeforeUpdate
+1,在页面每次render之前都会被调用，state已更新（不明白）
+2，适用于 获取render之前的DOM状态
+
+componentDidUpdate  、
+1,每次ui 更新时都被调用
+2，适用于需要根据props变化重新获取数据
+
+shouldComponentUpdate
+1,决定虚拟dom 是否重绘，返回true或false
+2，适用于 性能优化
+
+
+虚拟dom
+1,key属性很重要，兄弟节点要都有各自的key,key 对性能的提升是很重要的
+
+组建复用(组建设计模式)的两种形式
+1，高阶组建(HOC): 接受组建作为入参，返回新组建，一个文件如何同时引用两个高阶组件
+2，函数作为子组建
+
+
+
+
+
