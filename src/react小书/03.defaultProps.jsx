@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 
 class LikeButton extends Component {
-  // 
+  // 本节讲 defaultProps，defaultProps里有了默认值，就不用特意对里面的属性做判断了
+  // 不用引入任何第三方库，只需要使用defaultProps，这是react自带的
   static defaultProps = {
     likedText: '取消',
     unlikedText: '点赞'
