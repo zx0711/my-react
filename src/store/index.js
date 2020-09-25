@@ -3,8 +3,11 @@
  * @Author: xiao.zhang
  * @Date: 2020-09-23 14:05:25
  * @LastEditors: xiao.zhang
- * @LastEditTime: 2020-09-23 15:08:05
+ * @LastEditTime: 2020-09-25 14:15:16
  */
+// createStore => store
+// store => dispatch => action => reducer
+// store =>  getState, dispatch,subscribe
 function createStore(stateChanger) {
   let state = null
   const listeners = []
