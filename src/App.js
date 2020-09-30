@@ -1,11 +1,11 @@
 /*
- * @Description: 
+ * @Description:
  * @Author: xiao.zhang
  * @Date: 2019-09-19 14:50:16
  * @LastEditors: xiao.zhang
- * @LastEditTime: 2020-09-18 11:04:56
+ * @LastEditTime: 2020-09-30 10:28:19
  */
-import React from 'react';
+import React from 'react'
 // import logo from './logo.svg';
 // import ContextApi from './page/03.context-Api'
 // import StringRefs from './page/09.stringRefs'
@@ -16,9 +16,9 @@ import React from 'react';
 // import ReactRouterDom from './page/19.react-router-dom'
 // import { BrowserRouter, Switch, Route } from 'react-router-dom'
 // import Comment from './react小书/04.评论'
-import ClockExample from './react小书/07.组件挂载'
+// import ClockExample from './react小书/07.组件挂载'
 import PrototypeExample from './react小书/08.propotypes'
-import './App.css';
+import './App.css'
 // 函数式组建
 function App() {
   return (
@@ -35,7 +35,7 @@ function App() {
     // <ClockExample></ClockExample>
     <PrototypeExample></PrototypeExample>
     // <DefaultPropsExample />
-  );
+  )
 }
 
-export default App;
+export default App
