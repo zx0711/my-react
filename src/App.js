@@ -3,19 +3,23 @@
  * @Author: xiao.zhang
  * @Date: 2019-09-19 14:50:16
  * @LastEditors: xiao.zhang
- * @LastEditTime: 2020-09-30 15:57:30
+ * @LastEditTime: 2020-10-09 13:53:29
  */
 import React from 'react'
-import { Provider } from 'mobx-react'
-import store from './mobxStore/index'
+// import { Provider } from 'mobx-react'
+// import store from './mobxStore/index'
+// import ContextExample from './react小书/12.contextExample'
+import ContextExample from './react小书/14.newContext'
 // import './App.css'
+
 // 函数式组建
 function App() {
   return (
     // <PrototypeExample></PrototypeExample>
     <div>
       {/* 把mobx整体注入到react中去 */}
-      <Provider store={store}></Provider>
+      {/* <Provider store={store}></Provider> */}
+      <ContextExample></ContextExample>
     </div>
   )
 }
