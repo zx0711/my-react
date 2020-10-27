@@ -6,7 +6,7 @@ const ThemeContext = React.createContext('light')
 class App extends React.Component {
   render() {
     return (
-      <ThemeContext.Provider value="red">
+      <ThemeContext.Provider value={'red'}>
         <Toolbar />
       </ThemeContext.Provider>
     )
