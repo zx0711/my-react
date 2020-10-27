@@ -1,0 +1,60 @@
+<!--
+ * @Description:
+ * @Author: xiao.zhang
+ * @Date: 2020-10-27 17:37:06
+ * @LastEditors: xiao.zhang
+ * @LastEditTime: 2020-10-27 19:34:46
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- 引入react核心代码 -->
+    <script src="https://cdn.bootcss.com/react/16.8.6/umd/react.development.js"></script>
+    <!-- 引入reactDom核心代码 -->
+    <script src="https://cdn.bootcss.com/react-dom/16.8.6/umd/react-dom.development.js"></script>
+    <!-- 引入babel核心代码 -->
+    <script src="https://cdn.bootcss.com/babel-standalone/6.26.0/babel.min.js"></script>
+    <title>JSX & React.createElement()</title>
+  </head>
+  <body>
+    <!-- 使用javascript原生插入节点的根节点 -->
+    <div id="rootByJs"></div>
+    <!-- 使用React.createElement()方法插入节点的根节点 -->
+    <div id="rootByReactCreateElement"></div>
+    <!-- 使用JSX方法插入节点的根节点 -->
+    <div id="rootByJsx"></div>
+    <script>
+      // 原生方法插入
+      let htmlNode = document.createElement('div')
+      htmlNode.innerHTML = '你好 前端战五渣'
+      htmlNode.className = 'title'
+      document.getElementById('rootByJs').appendChild(htmlNode)
+    </script>
+    <script>
+      // 使用React.createElement()方法插入
+      ReactDOM.render(
+        React.createElement('div', { className: 'title' }, '你好 前端战五渣'),
+        document.getElementById('rootByReactCreateElement')
+      )
+    </script>
+    <script type="text/babel">
+      const arr = (
+        <div className="title" key={1}>
+          <span>Hello ZX</span>
+          <ul>
+            <li>111</li>
+            <li>222</li>
+          </ul>
+        </div>
+      )
+      const str = <div className="title">你好 前端战五渣</div>
+      console.log('dd', arr, str)
+      // 使用JSX方法插入
+      ReactDOM.render(
+        <div className="title">你好 前端战五渣</div>,
+        document.getElementById('rootByJsx')
+      )
+    </script>
+  </body>
+</html>
