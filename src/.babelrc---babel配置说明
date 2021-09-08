@@ -16,3 +16,6 @@
   ]
 }
 
+; // 提取css文件为单独的css文件,也就是link引入的css文件
+; const ExtractTextPlugin = require('extract-text-webpack-plugin')
+

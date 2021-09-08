@@ -3,7 +3,7 @@
  * @Author: xiao.zhang
  * @Date: 2019-09-19 14:50:16
  * @LastEditors: xiao.zhang
- * @LastEditTime: 2021-09-08 11:25:24
+ * @LastEditTime: 2021-09-08 11:43:42
  */
 import React from 'react'
 // import { Provider } from 'mobx-react'
@@ -13,14 +13,15 @@ import React from 'react'
 import './App.css'
 import Styles from './App.module.css'
 import Imags from './active.png'
+import HtmlDiff from './html-diff.png'
 import { TestFunc } from './test.tsx'
 import TestCss from './test.css'
 
 console.log('1个是加module的css,一个是没加module的css', Styles, TestCss)
 
-// 函数式组建
 /**
- * webpack配置好文链接
+ * webpack配置好文链接：
+ * https://juejin.cn/post/6844903853905674248
  */
 function App() {
   let flag = false
@@ -29,7 +30,8 @@ function App() {
     <div>
       <div className="title">你好，我想测试webpack</div>
       <div className={Styles.titleTest}>我想测试css module</div>
-      <img src={Imags}></img>
+      <img src={Imags} alt=""></img>
+      <img src={HtmlDiff} alt=""></img>
       <TestFunc></TestFunc>
       <div
         className={TestCss.colorTest}

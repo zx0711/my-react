@@ -18,8 +18,7 @@ const WorkboxWebpackPlugin = require('workbox-webpack-plugin')
 const WatchMissingNodeModulesPlugin = require('react-dev-utils/WatchMissingNodeModulesPlugin')
 const ModuleScopePlugin = require('react-dev-utils/ModuleScopePlugin')
 const getCSSModuleLocalIdent = require('react-dev-utils/getCSSModuleLocalIdent')
-// 提取css文件为单独的css文件
-const ExtractTextPlugin = require('extract-text-webpack-plugin')
+
 const paths = require('./paths')
 const modules = require('./modules')
 const getClientEnvironment = require('./env')
@@ -278,6 +277,8 @@ module.exports = function (webpackEnv) {
               /**
                * url-loader依赖于file-loader,把图片转换成base64嵌入html,如果超出一定阀值则交给file-loader
                * 阀值是limit，单位是字节
+               * url-loader可以在文件比较小的时候，直接变成base64字符串内嵌到页面中
+               * file-loader解析图片地址，把图片从源文件拷贝到目标文件并且修改源文件名字，也就是修改文件引入路径
                *  */
               loader: require.resolve('url-loader'),
               options: {
@@ -438,7 +439,7 @@ module.exports = function (webpackEnv) {
       new InterpolateHtmlPlugin(HtmlWebpackPlugin, env.raw),
 
       new ModuleNotFoundPlugin(paths.appPath),
-
+      // 区分环境变量
       new webpack.DefinePlugin(env.stringified),
 
       isEnvDevelopment && new webpack.HotModuleReplacementPlugin(),
