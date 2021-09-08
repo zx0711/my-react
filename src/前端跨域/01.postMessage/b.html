@@ -1,0 +1,38 @@
+<!--
+ * @Description: 
+ * @Author: xiao.zhang
+ * @Date: 2020-11-13 17:56:29
+ * @LastEditors: xiao.zhang
+ * @LastEditTime: 2020-11-13 17:57:43
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 接收domain1的数据
+      window.addEventListener(
+        'message',
+        function (e) {
+          alert('data from domain1 ---> ' + e.data)
+
+          var data = JSON.parse(e.data)
+          if (data) {
+            data.number = 16
+
+            // 处理后再发回domain1
+            window.parent.postMessage(
+              JSON.stringify(data),
+              'http://127.0.0.1:5500/src/page/04.%E5%89%8D%E7%AB%AF%E8%B7%A8%E5%9F%9F/05.postMessage/a.html'
+            )
+          }
+        },
+        false
+      )
+    </script>
+  </body>
+</html>
