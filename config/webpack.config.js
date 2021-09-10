@@ -121,11 +121,13 @@ module.exports = function (webpackEnv) {
   return {
     mode: isEnvProduction ? 'production' : isEnvDevelopment && 'development',
     bail: isEnvProduction,
+    // devtool是否开启sourcemap,可以看到报错的具体文件路径
     devtool: isEnvProduction
       ? shouldUseSourceMap
         ? 'source-map'
         : false
       : isEnvDevelopment && 'cheap-module-source-map',
+    // 起始文件入口
     entry: [
       //! 入口文件
       isEnvDevelopment &&
@@ -133,7 +135,7 @@ module.exports = function (webpackEnv) {
 
       paths.appIndexJs,
     ].filter(Boolean),
-    //! 输出文件配置，经过一系列的webpack操作后返回的代码放入到的文件位置，由这个output属性来配置
+    // 输出文件配置，经过一系列的webpack操作后返回的代码放入到的文件位置，由这个output属性来配置
     output: {
       //! 把最终输出的文件放在哪里
       path: isEnvProduction ? paths.appBuild : undefined,
@@ -245,7 +247,7 @@ module.exports = function (webpackEnv) {
     resolveLoader: {
       plugins: [PnpWebpackPlugin.moduleLoader(module)],
     },
-    // 模块
+    // 模块,里面放loader的
     module: {
       strictExportPresence: true,
       rules: [
@@ -448,6 +450,7 @@ module.exports = function (webpackEnv) {
 
       isEnvDevelopment &&
         new WatchMissingNodeModulesPlugin(paths.appNodeModules),
+      // 分离样式文件，css提取为独立文件，支持按需加载
       isEnvProduction &&
         new MiniCssExtractPlugin({
           filename: 'static/css/[name].[contenthash:8].css',

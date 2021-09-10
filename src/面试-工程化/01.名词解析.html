@@ -1,0 +1,174 @@
+<!--
+ * @Description: 
+ * @Author: xiao.zhang
+ * @Date: 2021-09-09 10:11:08
+ * @LastEditors: xiao.zhang
+ * @LastEditTime: 2021-09-10 10:24:43
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /**
+       * 引入路径
+       * react库：react核心
+       * reactDom库：操控Dom
+       * Babel:把任意类型的js转为es5语法（几乎所有浏览器都支持es5语法）
+       * webpack：代码打包编译
+       */
+
+      /**
+       * 优秀好文
+       * loader和plugin:https://juejin.cn/post/6971220402466979848#heading-8
+       * webpack包含属性解析：
+       * loader: 其实是一个函数，对匹配的内容进行转换，将转换后的结果返回
+       * loader特点：
+       *     - 对代码进行转换，转为浏览器可以识别的js
+       *     - loader的执行是有顺序的，从下到上，从右到左
+       *     - 一个loader的职责是单一的，只需要完成一种转换
+       *     - 可以自定义loader，就是一个函数，接收参数options,并返回内容，引入自定义loader使用resolveLoader属性
+       *     - loader也分同步和异步
+       * 常见的loader:
+       *     - 样式类的loader:
+       *        - postcss-loader：自动补全前缀
+       *        - less-loader
+       *        - sass-loader:将sass/scss转为css
+       *        - css-loader:支持模块化、压缩、文件导入
+       *        - style-loader：将css注入到html js中
+       *     - 文件类的loader
+       *        - raw-loader
+       *        - file-loader：修改图片路径
+       *        - url-loader：用户设置一个阀值，小于阀值返回base64编码，处理图片和字体
+       *     - 编译类的loader
+       *        - babel-loader：ES6转为ES5
+       *        - ts-loader:将ts转为js
+       *     - 校验测试类 loader
+       *        - jslint-loader
+       *        - eslint-loader：通过ESLint检查js代码
+       *        - tslint-loader：通过tsLint
+       * loader的使用方式：
+       *     - 在webpack.config.js中配置：
+       *       options是loader的参数
+       *       module.exports = {
+                    module:{
+                        rules:[{
+                                test:/\.css$/,
+                                use:['style-loader','css-loader','sass-loader','less-loader','postcss-loader'],
+                                // use:{loader:'css-loader',options:{}}
+                            }
+                        ]
+                    }
+                }
+      * 
+      * 
+      * 
+      * 常见的 plugin:是一个类
+      *    - html-webpack-plugin 打包后生成一个html,并且让打包后的js文件引入到html中
+      *    - optimize-css-assets-webpack-plugin 对css代码进行压缩
+      *    - mini-css-extract-plugin 将写入style标签的css抽成一个css文件用link引入
+      *    - webpack-parallel-uglify-plugin 开启多进程执行代码压缩，提高打包的速度
+      *    - clean-webpack-plugin 每次打包前都将旧生成的文件删除
+      *    - serviceworker-webpack-plugin 为网页增加离线缓存功能
+      * 
+      * plugin 的使用方式
+      *    - 在plugins中使用
+      *   const ServiceworkerWebpackPlugin = require('serviceworker-webpack-plugin')
+            module.exports = {
+                plugins:[
+                    new ServiceworkerWebpackPlugin(1111),
+                ]
+            }
+      *  
+      */
+
+      /**
+       * loader和plugin区别：
+       * - Loader函数，对接收到的内容进行转换，返回转换后的结果
+       * - Plugin插件，监听webpack生命周期中的事件，在合适的时机通过webpack提高的api改变输出结果
+       *
+       *  - loader在module.rules中配置，作为模块的解析规则，类型为数组，每一项都是一个对象，内部包含了test、loader、option
+       *    - test：作用于哪些文件
+       *    - loader：使用什么loader
+       *    - options：给使用的loader传的参数
+       *
+       *  - Plugin类型为数组，每一项元素是plugin的实例，参数都是通过构造函数传入
+       */
+
+      /**
+       * devtool:是否开启sourceMap
+       */
+    </script>
+
+    <script>
+      /**
+       * 开发中，使用过哪些插件提高效率
+       */
+    </script>
+    <script>
+      /**
+       * webpack构建流程，也就是源码
+       */
+      class webpack {
+        compile() {}
+        run() {}
+      }
+      const compiler = new webpack()
+    </script>
+    <script>
+      /**
+       * 如何提供webpack的构建速度
+       */
+    </script>
+
+    <script>
+      /**
+       * 描述编写loader的思路
+       */
+    </script>
+
+    <script>
+      /**
+       * 描述编写Plugin思路
+       */
+    </script>
+
+    <script>
+      /**
+       * 编写一个plugin
+       */
+      class MyPlugin {
+        constructor(params) {
+          console.log(params)
+        }
+        apply(complier) {
+          compiler.plugin('emit', (compilation) => {
+            console.log('MyPlugin')
+          })
+        }
+      }
+
+      // const a = new MyPlugin()
+      // a.apply()
+
+      const obj = {
+        plugins: [new MyPlugin(11111)],
+      }
+
+      class Mywepack {
+        constructor(complier) {
+          this.complier = complier
+          //complier webpack的api
+          obj.plugins.map((item) => {
+            item.apply(complier)
+          })
+        }
+      }
+    </script>
+  </body>
+</html>
