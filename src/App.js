@@ -3,7 +3,7 @@
  * @Author: xiao.zhang
  * @Date: 2019-09-19 14:50:16
  * @LastEditors: xiao.zhang
- * @LastEditTime: 2021-09-10 10:21:03
+ * @LastEditTime: 2021-09-10 10:35:53
  */
 import React from 'react'
 // import { Provider } from 'mobx-react'
@@ -25,7 +25,6 @@ console.log('1个是加module的css,一个是没加module的css', Styles, TestCs
  */
 function App() {
   let flag = false
-  console.log(hh)
   return (
     // <PrototypeExample></PrototypeExample>
     <div>
