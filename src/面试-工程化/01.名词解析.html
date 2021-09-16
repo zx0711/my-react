@@ -3,7 +3,7 @@
  * @Author: xiao.zhang
  * @Date: 2021-09-09 10:11:08
  * @LastEditors: xiao.zhang
- * @LastEditTime: 2021-09-10 10:24:43
+ * @LastEditTime: 2021-09-14 18:10:53
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -114,9 +114,28 @@
       /**
        * webpack构建流程，也就是源码
        */
-      class webpack {
+      class MiniWebpack {
+        constructor(options) {}
         compile() {}
-        run() {}
+        // module-ast-es5
+        parse() {}
+        // 分析依赖关系,生成依赖图谱
+        // return 出一个对象
+        // {
+        //   'fileName': code
+        // }
+        analyse() {}
+        // 生成打包代码
+        generate() {}
+        // 将打包代码输出到对应文件中,也就生成了我们看到的build文件
+        fileOutput() {}
+        run() {
+          const { entry, output } = this.options
+          const grash = this.analyse(entry)
+          const grashStr = JSON.stringify(grash)
+          const code = this.generate(grashStr, entry)
+          this.fileOutput(output, code)
+        }
       }
       const compiler = new webpack()
     </script>
