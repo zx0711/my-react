@@ -3,7 +3,7 @@
  * @Author: xiao.zhang
  * @Date: 2021-09-09 10:11:08
  * @LastEditors: xiao.zhang
- * @LastEditTime: 2021-09-14 18:10:53
+ * @LastEditTime: 2021-09-28 00:02:43
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -109,85 +109,6 @@
       /**
        * 开发中，使用过哪些插件提高效率
        */
-    </script>
-    <script>
-      /**
-       * webpack构建流程，也就是源码
-       */
-      class MiniWebpack {
-        constructor(options) {}
-        compile() {}
-        // module-ast-es5
-        parse() {}
-        // 分析依赖关系,生成依赖图谱
-        // return 出一个对象
-        // {
-        //   'fileName': code
-        // }
-        analyse() {}
-        // 生成打包代码
-        generate() {}
-        // 将打包代码输出到对应文件中,也就生成了我们看到的build文件
-        fileOutput() {}
-        run() {
-          const { entry, output } = this.options
-          const grash = this.analyse(entry)
-          const grashStr = JSON.stringify(grash)
-          const code = this.generate(grashStr, entry)
-          this.fileOutput(output, code)
-        }
-      }
-      const compiler = new webpack()
-    </script>
-    <script>
-      /**
-       * 如何提供webpack的构建速度
-       */
-    </script>
-
-    <script>
-      /**
-       * 描述编写loader的思路
-       */
-    </script>
-
-    <script>
-      /**
-       * 描述编写Plugin思路
-       */
-    </script>
-
-    <script>
-      /**
-       * 编写一个plugin
-       */
-      class MyPlugin {
-        constructor(params) {
-          console.log(params)
-        }
-        apply(complier) {
-          compiler.plugin('emit', (compilation) => {
-            console.log('MyPlugin')
-          })
-        }
-      }
-
-      // const a = new MyPlugin()
-      // a.apply()
-
-      const obj = {
-        plugins: [new MyPlugin(11111)],
-      }
-
-      class Mywepack {
-        constructor(complier) {
-          this.complier = complier
-          //complier webpack的api
-          obj.plugins.map((item) => {
-            item.apply(complier)
-          })
-        }
-      }
     </script>
   </body>
 </html>

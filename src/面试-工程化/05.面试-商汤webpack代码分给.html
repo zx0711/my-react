@@ -1,0 +1,36 @@
+<!--
+ * @Description: 
+ * @Author: xiao.zhang
+ * @Date: 2021-09-19 19:36:39
+ * @LastEditors: xiao.zhang
+ * @LastEditTime: 2021-09-19 23:07:55
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>热更新</title>
+  </head>
+  <body>
+    <script>
+      /***
+       * 好文链接：https://juejin.cn/post/6844904001792655373#heading-5
+       * 代码分割
+       * optimization （哦 po tou my zation）是一个对象里面有splitChunks属性（webpack4）
+       * new webpack.optimize.CommonsChunkPlugin() (webpack3使用的)
+       *
+       * 好处：
+       * 公共模块被抽离
+       * - 比如index1.js引入了a.js、b.js、c.js库
+       *   index2.js引入了a.js、b.js、c.js和react库
+       *   如果不用代码分割，像上面的4个相同的代码就会被打包2遍，打包后的文件体积很大，这个时候可以使用optimization
+       *   来提取公共的组件，然后使用公共的组件引用这个打包好的公共的文件就可以了，当然上面这四个还需要拆分，拆分成node-module和业务组件
+       *
+       *  总结就是：公共组件不让它打包多次，减少打包后的体积
+       *
+       */
+    </script>
+  </body>
+</html>

@@ -3,7 +3,7 @@
  * @Author: xiao.zhang
  * @Date: 2019-09-19 14:50:16
  * @LastEditors: xiao.zhang
- * @LastEditTime: 2021-09-10 10:35:53
+ * @LastEditTime: 2021-09-19 22:19:39
  */
 import React from 'react'
 // import { Provider } from 'mobx-react'
@@ -28,7 +28,7 @@ function App() {
   return (
     // <PrototypeExample></PrototypeExample>
     <div>
-      <div className="title">你好，我想测试webpack</div>
+      <div className="title">你好，我想测试webpack1111</div>
       <div className={Styles.titleTest}>我想测试css module</div>
       <img src={Imags} alt=""></img>
       <img src={HtmlDiff} alt=""></img>
