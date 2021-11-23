@@ -3,7 +3,7 @@
  * @Author: xiao.zhang
  * @Date: 2021-09-09 10:11:08
  * @LastEditors: xiao.zhang
- * @LastEditTime: 2021-09-28 00:02:43
+ * @LastEditTime: 2021-11-08 14:07:42
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -36,11 +36,13 @@
        *     - loader也分同步和异步
        * 常见的loader:
        *     - 样式类的loader:
-       *        - postcss-loader：自动补全前缀
-       *        - less-loader
-       *        - sass-loader:将sass/scss转为css
-       *        - css-loader:支持模块化、压缩、文件导入
        *        - style-loader：将css注入到html js中
+       *        - css-loader:支持模块化、压缩、文件导入
+       *        - postcss-loader：自动补全前缀
+       *        - sass-loader:将sass/scss转为css
+       *        - less-loader
+       *      
+       *        
        *     - 文件类的loader
        *        - raw-loader
        *        - file-loader：修改图片路径
@@ -89,6 +91,8 @@
 
       /**
        * loader和plugin区别：
+       * loader是用来加载文件的，比如可以把es6 js文件转为浏览器可以识别的es5 js文件。
+       * plugin是用来扩展webpack功能的。比如html-webpack-plugin插件，就是让大宝后的js文件引入到html中
        * - Loader函数，对接收到的内容进行转换，返回转换后的结果
        * - Plugin插件，监听webpack生命周期中的事件，在合适的时机通过webpack提高的api改变输出结果
        *
